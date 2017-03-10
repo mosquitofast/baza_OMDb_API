@@ -1,0 +1,12 @@
+$(document).ready(function() {
+	$(init);
+	
+	function init() {
+		var movieSearch = $('#movieSearch');
+		movieSearch.click(movieSearch);
+		
+		function movieSearch() {
+			alert("Kliknięto przycisk");
+		}
+	}
+});
