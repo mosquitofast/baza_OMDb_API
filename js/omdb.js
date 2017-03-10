@@ -6,7 +6,18 @@ $(document).ready(function() {
 		mSearch.click(f_mSearch);
 		
 		function f_mSearch() {
-			alert("Kliknięto przycisk");
+			var mTitle = $('#movieTitle').val();
+			alert("Wpisałeś: " + mTitle);
+			
+			$.ajax({
+				url:"http://www.omdbapi.com/?t=" + mTitle,
+				dataType:"json",				
+				success:renderTables
+			}); //end of ajax
+		}
+		
+		function renderTables(response) {
+			alert("Film: " + response.Runtime);
 		}
 	}
 });

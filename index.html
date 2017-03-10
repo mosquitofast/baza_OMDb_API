@@ -21,10 +21,11 @@
 		</div>
 		<div id="search">
 			<h1>Wyszukaj:</h1>
-			<input type="text" id="movieTitle" class="form-control" /><br />
-			<button id="movieSearch" class="btn btn-primary btn-block">Szukaj</button>
+			<input type="text" id="movieTitle" class="form-control" value="Wpisz nazwę filmu" onclick="this.value=''" /><br />
+			<button id="movieSearch" class="btn btn-primary btn-md btn-block">Szukaj</button>
 		</div>
 		
+		<h2>Rezultaty:</h2>
 		<table class="table table-striped table-bordered">
 			<thead>
 				<tr>
@@ -38,7 +39,7 @@
 				<tr>
 					<td>Avatar</td>
 					<td>1998</td>
-					<td>To jest długi opis filmu. Film powstał w 1998 roku i jest do dzisiaj popularny. Swoją popularnością przebija inne filmy!</td>
+					<td id="describe">To jest długi opis filmu. Film powstał w 1998 roku i jest do dzisiaj popularny. Swoją popularnością przebija inne filmy!</td>
 					<td><img src="http://mccom.pl/gfx/mccom.png" /></td>
 				</tr>
 			</tbody>
