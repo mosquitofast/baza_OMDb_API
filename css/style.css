@@ -1,0 +1,18 @@
+:root {
+	background: #FFF;
+}
+
+body {
+	background: #FFF;
+	margin: 0px;
+	padding: 0px;
+	color: #000;
+}
+
+
+#logo {
+	width: 211px;
+	height: 45px;
+	margin: auto;
+}
+
