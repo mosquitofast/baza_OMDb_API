@@ -76,3 +76,7 @@ body {
 	color: #000;
 }
 
+th {
+	text-align: center;
+	vertical-align: middle;
+}
