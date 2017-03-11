@@ -21,22 +21,37 @@
 		<div id="logo">
 			<img src="http://mccom.pl/gfx/mccom.png"  />
 		</div>
-		<div id="search">
-			<h1>Wyszukaj:</h1>
+		
+		
+		<div class="row">
+			<div class="col-sm-6">
+				<h1>Wyszukaj:</h1>
+			</div>
+			<div class="col-sm-6">
+				<div class="container opt">
+					<p>Dodatkowe opcje</p>
+					<div class="options">
+						<div class="close">
+							<p>X</p>
+						</div>
+						<label><input type="checkbox" id="axbc"> Gatunek</label>
+						<label><input type="checkbox" id="b"> Reżyser</label><br />
+						<label><input type="checkbox" id="c"> Aktorzy</label>
+						<label><input type="checkbox" id="d"> Nagrody</label><br />
+						<label><input type="checkbox" id="e"> Ocena</label>
+					</div>
+				</div>
+			</div>
+		</div>
 			<input type="text" id="movieTitle" class="form-control" value="Wpisz nazwę filmu" onclick="this.value=''" /><br />
 			<button id="movieSearch" class="btn btn-primary btn-md btn-block">Szukaj</button>
-		</div>
+		
 		
 		<div id="results">
 			<h2>Rezultat:</h2>
 			<table class="table table-striped table-bordered" id="result_table">
 				<thead>
-					<tr>
-						<th>Tytuł</th>
-						<th>Rok wydania</th>
-						<th>Czas trwania</th>
-						<th>Opis</th>
-						<th>Zdjęcie</th>
+					<tr id="proba">
 					</tr>
 				</thead>
 				<tbody>
