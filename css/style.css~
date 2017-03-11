@@ -9,13 +9,70 @@ body {
 	color: #000;
 }
 
-.container {
-	border: 1px solid #000;
-}
-
 #logo {
 	width: 211px;
 	height: 45px;
 	margin: auto;
+}
+
+#search p {
+	float: right;
+	color: #1E90FF;
+	cursor: pointer;
+}
+
+#search p:hover {
+	text-decoration: underline;
+}
+
+#footer {
+	width: 100%;
+	height: 40px;
+	background-color: #FF0000;
+}
+
+.row p {
+	font-size: 1.1em;
+	margin: auto;
+	vertical-align: middle;
+	text-align: center;
+}
+
+.options {
+	background-color: #999;
+	width: 200px;
+	height: 130px;
+	vertical-align: middle;
+	box-shadow: 3px 3px 5px #000;
+	float: right;
+}
+
+.options label {
+	width: 80px;
+}
+
+.close {
+	width: 100%;
+}
+
+.close p {
+	float: right;
+}
+
+.opt {
+	width: 220px;
+	height: auto;
+	float: right;
+	color: #1E90FF;
+}
+
+.opt p:hover {
+	text-decoration: underline;
+	color: #FFA500;
+	cursor: pointer;
+}
+
+.opt label {
+	color: #000;
 }
 

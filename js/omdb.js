@@ -1,8 +1,9 @@
 $(document).ready(function() {
+	$(hideTags);
 	$(init);
+	$(showMoreOptions);
 	
-	$('#results').hide();
-	
+		
 	function init() {
 		var mSearch = $('#movieSearch');
 		mSearch.click(f_mSearch);
@@ -42,5 +43,23 @@ $(document).ready(function() {
 			$('#results').fadeIn(3000);
 		
 		}	
+	}
+	
+	function hideTags() {
+		$('#results').hide();
+		$('.options').hide();
+	}
+	
+	function showMoreOptions() {
+		var addOptions = $('.opt').find('p');
+		var closeOptions = $('.close').find('p');
+		
+		addOptions.click(function() {
+			$('.options').slideDown(1500);
+		});
+		
+		closeOptions.click(function() {
+			$('.options').slideUp(1500);
+		});
 	}
 });
