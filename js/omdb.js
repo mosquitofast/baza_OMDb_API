@@ -1,6 +1,6 @@
 $(document).ready(function() {
-	$(hideTags);
 	$(init);
+	$(hideTags);
 	$(showMoreOptions);
 	
 		
@@ -23,15 +23,34 @@ $(document).ready(function() {
 		
 		
 		function renderTables(response) {
-						
+			var titleTh = new Array("Tytuł","Rok produkcji","Czas trwania","Opis","Zdjęcie");
+			
+			var pos = 4;
+			
+			titleTh.splice(pos,0,"Gatunek");
+			
+			alert("Pozycja 1 to: " + titleTh[0] + " Pozycja 2 to: " + titleTh[1] + " Pozycja 3 to: " + titleTh[2] + " Pozycja 4 to: " + titleTh[3] + "Pozycja 5 to: " + titleTh[4] + " Pozycja 6 to: " + titleTh[5]);
 			
 			var title = response.Title;
 			var yearProduction = response.Year;
 			var duration = response.Runtime;
 			var describe = response.Plot;
 			var imgURL = response.Poster;
-				
-				
+			
+			//optional if user check
+			var gat = response.Genre;
+			var actors = response.Actors;
+			var rank = response.imdbRating;
+			var director = response.Director;
+			var awards = response.Awards;
+			
+			//generator of table
+			for(var i = 0; i < title.length - 1; i++) {
+				$('#proba').append("<th>" + titleTh[i] + "</th>");
+			}
+			
+			
+			/*
 			for(var i in response) {
 				var resp = response[i];
 				$(".link").html(title);
@@ -40,6 +59,7 @@ $(document).ready(function() {
 				$(".post").html(describe);
 				$(".poster").attr("src",imgURL);
 			}	
+			*/
 			$('#results').fadeIn(3000);
 		
 		}	
