@@ -21,30 +21,23 @@ $(document).ready(function() {
 		
 		
 		function renderTables(response) {
-			var titleTh = new Array("Tytuł","Rok produkcji","Czas trwania","Opis","Gatunek","Zdjęcie");
-			
-			
-			var title = response.Title;
-			var yearProduction = response.Year;
-			var duration = response.Runtime;
-			var describe = response.Plot;
-			var imgURL = response.Poster;
+			var titleTh = new Array("Tytuł","Rok produkcji","Czas trwania","Opis","Zdjęcie");
+			var responseTd = new Array(response.Title,response.Year,response.Runtime,response.Plot,response.Poster);
 			
 			//generator of th
 			$('thead').find('tr').empty();
 			for(var i = 0; i < titleTh.length; i++) {
 				$('thead').find('tr').append("<th>" + titleTh[i] + "</th>");
 			}
-			
+			//generator of td
 			$('tbody').find('tr').empty();
-			
-			$('tbody').find('tr').append("<td>" + title + "</td>");
-			$('tbody').find('tr').append("<td>" + yearProduction + "</td>");
-			$('tbody').find('tr').append("<td>" + duration + "</td>");
-			$('tbody').find('tr').append("<td>" + describe + "</td>");
-			$('tbody').find('tr').append("<td>" + gat + "</td>");
-			$('tbody').find('tr').append("<td><img src='" + imgURL + "' /></td>");
-			
+			for(var j = 0; j < responseTd.length; j++) {
+				if(responseTd[j] == response.Poster ) {
+					$('tbody').find('tr').append("<td><img src='" + responseTd[j] + "' /></td>");
+				} else {
+					$('tbody').find('tr').append("<td>" + responseTd[j] + "</td>");
+				}
+			}
 			$('#results').fadeIn(3000);
 		}	
 	}
