@@ -10,11 +10,7 @@ $(document).ready(function() {
 		
 		function f_mSearch() {
 			var mTitle = $('#movieTitle').val();
-			var firstCheckBox = $("#g").val().checked;
-			alert("Variable a is: " + firstCheckBox);
-		
-			
-			
+						
 			$.ajax({
 				url:"http://www.omdbapi.com/?t=" + mTitle + "&plot=full",
 				dataType:"json",				
@@ -25,15 +21,8 @@ $(document).ready(function() {
 		
 		
 		function renderTables(response) {
-			var titleTh = new Array("Tytuł","Rok produkcji","Czas trwania","Opis","Zdjęcie");
+			var titleTh = new Array("Tytuł","Rok produkcji","Czas trwania","Opis","Gatunek","Zdjęcie");
 			
-			//var pos = 4;
-			
-			
-			
-			//titleTh.splice(pos,0,"Gatunek","Aktorzy","Nagrody");
-			
-			//alert("Pozycja 1 to: " + titleTh[0] + " Pozycja 2 to: " + titleTh[1] + " Pozycja 3 to: " + titleTh[2] + " Pozycja 4 to: " + titleTh[3] + " Pozycja 5 to: " + titleTh[4] + " Pozycja 6 to: " + titleTh[5] + " Pozycja 7 to: " + titleTh[6] + " Pozycja 8 to: " + titleTh[7]);
 			
 			var title = response.Title;
 			var yearProduction = response.Year;
@@ -41,39 +30,22 @@ $(document).ready(function() {
 			var describe = response.Plot;
 			var imgURL = response.Poster;
 			
-			//optional if user check
-			var gat = response.Genre;
-			var actors = response.Actors;
-			var rank = response.imdbRating;
-			var director = response.Director;
-			var awards = response.Awards;
-			
-			//generator of table
+			//generator of th
 			$('thead').find('tr').empty();
 			for(var i = 0; i < titleTh.length; i++) {
 				$('thead').find('tr').append("<th>" + titleTh[i] + "</th>");
 			}
+			
 			$('tbody').find('tr').empty();
+			
 			$('tbody').find('tr').append("<td>" + title + "</td>");
 			$('tbody').find('tr').append("<td>" + yearProduction + "</td>");
 			$('tbody').find('tr').append("<td>" + duration + "</td>");
 			$('tbody').find('tr').append("<td>" + describe + "</td>");
+			$('tbody').find('tr').append("<td>" + gat + "</td>");
 			$('tbody').find('tr').append("<td><img src='" + imgURL + "' /></td>");
 			
-			//for(var i in response) {
-				
-				//var resp = response[i];
-				//$(".link").html(title);
-				//$(".yProduce").html(yearProduction);
-				//$(".last").html(duration);
-				//$(".post").html(describe);
-				//$(".poster").attr("src",imgURL);
-			//}	
-			
-			
-			
 			$('#results').fadeIn(3000);
-		
 		}	
 	}
 	
