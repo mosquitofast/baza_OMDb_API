@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<meta name="keywords" content="filmowa baza danych, OMDb API, wyszukaj film"/>
+	<meta name="description" content="Wyszukaj informacje na temat filmu, który cię interesuje." />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>OMDb API</title>
+	
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="css/style.css" />
+  	
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" /></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" /></script>
+	<script src="js/omdb.js"></script>
+</head>
+<body>
+	<div class="container">
+		<div id="logo">
+			<img src="http://mccom.pl/gfx/mccom.png"  />
+		</div>
+		<div class="row">
+			<h1>Wyszukaj:</h1>
+		</div>
+		<input type="text" id="movieTitle" class="form-control" value="Wpisz nazwę filmu" onclick="this.value=''" /><br />
+		<div id="noFilms">
+			<p>Nie znaleziono filmu!</p>
+		</div>
+		<div id="loading">
+			<p>Loading...</p>
+			<div id="square">
+			</div>
+		</div>
+		<button id="movieSearch" class="btn btn-primary btn-md btn-block" >Szukaj</button>
+		
+		<div id="results">
+			<h2>Rezultat:</h2>
+			<table class="table table-responsive table-striped table-bordered">
+				<thead>
+					<tr>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		
+		<div class="footer">
+			<div class="row">
+				<div class="col-sm-4"></div>
+				<div class="col-sm-4"><p>Łukasz Tokarski</p></div>
+				<div class="col-sm-4"></div>
+			</div>
+		</div>
+		
+		
+	</div>
+</body>
+</html>
