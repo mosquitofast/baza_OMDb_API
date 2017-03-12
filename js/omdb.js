@@ -9,6 +9,7 @@ $(document).ready(function() {
 		
 		function f_mSearch()	{
 			mSearch.attr("disabled","disabled");
+			$('#loading').fadeIn(500);
 			var mTitle = $('#movieTitle').val();
 						
 			$.ajax({
@@ -31,6 +32,7 @@ $(document).ready(function() {
 			
 			//if find no films
 			if(check == "False") {
+				$('#loading').fadeOut(500);
 				$('#noFilms').fadeIn(1500).delay(2000).fadeOut(1500);
 				mSearch[0].removeAttribute("disabled");
 			} else {
@@ -51,6 +53,7 @@ $(document).ready(function() {
 				//callback function
 				$('#results').fadeIn(3000,function() {
 					mSearch[0].removeAttribute("disabled");
+					$('#loading').fadeOut(500);
 				});
 			}
 				
@@ -60,9 +63,6 @@ $(document).ready(function() {
 	function hideTags() {
 		$('#results').hide();
 		$('#noFilms').hide();
-	}
-	
-	
-	
-	
+		$('#loading').hide();
+	}	
 });

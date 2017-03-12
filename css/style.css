@@ -71,6 +71,38 @@ th {
 	margin-top: 17px;
 }
 
+#movieSearch {
+	margin-top: 10px;
+}
+
+#loading p {
+	font-weight: bold;
+}
+
+/* loading */
+#loading {
+	width: 60px;
+	height: 60px;
+	text-align: center;
+	margin: auto;
+}
+
+#square {
+	width: 0;
+	height: 0;
+	border-bottom: 30px solid #FF0000;
+	border-right: 30px solid #FFA500;
+	margin: auto;
+	animation: arnd 12s infinite;
+}
+/* loading */
+/* animation */
+@keyframes arnd {
+	0% { transform: rotate(0) }
+	100% { transform: rotate(360deg) }
+}
+/* animation */
+
 @media only screen and (max-width: 760px) {
 	#results table img {
 		width: 200px;
