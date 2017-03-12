@@ -102,3 +102,16 @@ th {
 		height: 350px;
 	}
 }
+
+@media only screen and (max-width: 565px) {
+	
+	tbody > tr > td:first-child + td + td + td + td {
+		visibility: hidden;
+	}
+	thead > tr > th:first-child + th + th + th + th {
+		visibility: hidden;
+	}
+	table {
+		empty-cells: hide;
+	}
+}
