@@ -32,6 +32,7 @@ $(document).ready(function() {
 			//if find no films
 			if(check == "False") {
 				$('#noFilms').fadeIn(1500).delay(2000).fadeOut(1500);
+				mSearch[0].removeAttribute("disabled");
 			} else {
 				//generator of td
 				$('tbody').find('tr').empty();
@@ -60,6 +61,7 @@ $(document).ready(function() {
 		$('#results').hide();
 		$('#noFilms').hide();
 	}
+	
 	
 	
 	
