@@ -24,6 +24,8 @@ $(document).ready(function() {
 			var titleTh = new Array("Tytuł","Rok produkcji","Czas trwania","Opis","Zdjęcie");
 			var responseTd = new Array(response.Title,response.Year,response.Runtime,response.Plot,response.Poster);
 			
+			
+			
 			//generator of th
 			$('thead').find('tr').empty();
 			for(var i = 0; i < titleTh.length; i++) {
@@ -58,5 +60,9 @@ $(document).ready(function() {
 		closeOptions.click(function() {
 			$('.options').slideUp(1500);
 		});
+	}
+	
+	function changeStructureTable() {
+		
 	}
 });
