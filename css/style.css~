@@ -39,7 +39,7 @@ body {
 }
 
 .options {
-	background-color: #999;
+	background-color: #E5E5E5;
 	width: 200px;
 	height: 130px;
 	vertical-align: middle;
@@ -51,28 +51,74 @@ body {
 	width: 80px;
 }
 
-.close {
-	width: 100%;
+th {
+	text-align: center;
+	vertical-align: middle;
 }
 
-.close p {
-	float: right;
+#noFilms {
+	border: 2px solid #000;
+	width: 250px;
+	height: 80px;
+	margin: auto;
+	color: #FF0000;
+	font-weight: bold;
+	font-size: 1.5em;
+	text-align: center;
 }
 
-.opt {
-	width: 220px;
-	height: auto;
-	float: right;
-	color: #1E90FF;
+#noFilms p {
+	margin-top: 17px;
 }
 
-.opt p:hover {
-	text-decoration: underline;
-	color: #FFA500;
-	cursor: pointer;
+#movieSearch {
+	margin-top: 10px;
 }
 
-.opt label {
-	color: #000;
+#loading p {
+	font-weight: bold;
 }
 
+/* loading */
+#loading {
+	width: 60px;
+	height: 60px;
+	text-align: center;
+	margin: auto;
+}
+
+#square {
+	width: 0;
+	height: 0;
+	border-bottom: 30px solid #FF0000;
+	border-right: 30px solid #FFA500;
+	margin: auto;
+	animation: arnd 12s infinite;
+}
+/* loading */
+/* animation */
+@keyframes arnd {
+	0% { transform: rotate(0) }
+	100% { transform: rotate(360deg) }
+}
+/* animation */
+
+@media only screen and (max-width: 760px) {
+	#results table img {
+		width: 200px;
+		height: 350px;
+	}
+}
+
+@media only screen and (max-width: 565px) {
+	
+	tbody > tr > td:first-child + td + td + td + td {
+		visibility: hidden;
+	}
+	thead > tr > th:first-child + th + th + th + th {
+		visibility: hidden;
+	}
+	table {
+		empty-cells: hide;
+	}
+}
