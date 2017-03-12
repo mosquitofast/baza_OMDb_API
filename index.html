@@ -27,12 +27,15 @@
 			<h1>Wyszukaj:</h1>
 		</div>
 			<input type="text" id="movieTitle" class="form-control" value="Wpisz nazwę filmu" onclick="this.value=''" /><br />
+			<div id="noFilms">
+				<p>Nie znaleziono filmu!</p>
+			</div>
 			<button id="movieSearch" class="btn btn-primary btn-md btn-block">Szukaj</button>
 		
 		
 		<div id="results">
 			<h2>Rezultat:</h2>
-			<table class="table table-striped table-bordered">
+			<table class="table table-responsive table-striped table-bordered">
 				<thead>
 					<tr>
 					</tr>
@@ -44,13 +47,16 @@
 			
 			</table>
 		</div>
+		
 		<div class="footer">
 			<div class="row">
 				<div class="col-sm-4"></div>
 				<div class="col-sm-4"><p>Łukasz Tokarski</p></div>
 				<div class="col-sm-4"></div>
 			</div>
-		</div>	
+		</div>
+		
+		
 		
 	</div>
 

@@ -23,46 +23,34 @@ $(document).ready(function() {
 		function renderTables(response) {
 			var titleTh = new Array("Tytuł","Rok produkcji","Czas trwania","Opis","Zdjęcie");
 			var responseTd = new Array(response.Title,response.Year,response.Runtime,response.Plot,response.Poster);
-			
-			
-			
+			var check = response.Response;
+						
 			//generator of th
 			$('thead').find('tr').empty();
 			for(var i = 0; i < titleTh.length; i++) {
 				$('thead').find('tr').append("<th>" + titleTh[i] + "</th>");
 			}
-			//generator of td
-			$('tbody').find('tr').empty();
-			for(var j = 0; j < responseTd.length; j++) {
-				if(responseTd[j] == response.Poster ) {
-					$('tbody').find('tr').append("<td><img src='" + responseTd[j] + "' /></td>");
-				} else {
-					$('tbody').find('tr').append("<td>" + responseTd[j] + "</td>");
+			
+			//if find no films
+			if(check == "False") {
+				$('#noFilms').fadeIn(1500).delay(2000).fadeOut(1500);
+			} else {
+				//generator of td
+				$('tbody').find('tr').empty();
+				for(var j = 0; j < responseTd.length; j++) {
+					if(responseTd[j] == response.Poster ) {
+						$('tbody').find('tr').append("<td><img src='" + responseTd[j] + "' /></td>");
+					} else {
+						$('tbody').find('tr').append("<td>" + responseTd[j] + "</td>");
+					}
 				}
+				$('#results').fadeIn(3000);
 			}
-			$('#results').fadeIn(3000);
 		}	
 	}
 	
 	function hideTags() {
 		$('#results').hide();
-		$('.options').hide();
-	}
-	
-	function showMoreOptions() {
-		var addOptions = $('.opt').find('p');
-		var closeOptions = $('.close').find('p');
-		
-		addOptions.click(function() {
-			$('.options').slideDown(1500);
-		});
-		
-		closeOptions.click(function() {
-			$('.options').slideUp(1500);
-		});
-	}
-	
-	function changeStructureTable() {
-		
+		$('#noFilms').hide();
 	}
 });
